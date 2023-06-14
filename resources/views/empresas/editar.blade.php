@@ -1,0 +1,93 @@
+@extends('layouts.panel')
+@section('contenido')
+    <div class="container-fluid">
+        <div class="block-header">
+            <h2>Editar empresa</h2>
+            <small class="text-muted">Bienvenido a la aplicación ARROW</small>
+        </div>
+        <div class="row clearfix">
+			<div class="col-lg-12 col-md-12 col-sm-12">
+				<div class="card">
+					<div class="header">
+						
+					</div>
+					<div class="body">                        
+                        <div class="row clearfix">
+                            @if ($errors->any())
+                                <div class="col-md-12">
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>!Revise los campos¡</strong>
+                                            @foreach ($errors->all() as $error)
+                                                <span >{{ $error }}</span>
+                                            @endforeach
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                    </div>
+                                </div>
+                            @endif
+                            <div class="col-md-12">
+                            <form action="{{ route('empresas.update',$empresa->id) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                        <strong> Nombre </strong>
+                                            <input type="text" class="form-control" value="{{ old('nombre',$empresa->nombre) }}"  id="nombre" name="nombre">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                        <strong> Ubicación </strong>
+                                            <textarea  style="height: 100px" class="form-control"  id="ubicacion" name="ubicacion">{{ old('ubicacion',$empresa->ubicacion) }}</textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                        <strong> RFC </strong>
+                                            <input type="text" class="form-control" value="{{ old('rfc',$empresa->rfc) }}"  id="rfc" name="rfc">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                        <strong> IMMS </strong>
+                                            <input type="text" class="form-control" value="{{ old('imms',$empresa->imms) }}"  id="imms" name="imms">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                        <strong> CCEM </strong>
+                                            <input type="text" class="form-control" value="{{ old('ccem',$empresa->ccem) }}"  id="ccem" name="ccem">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br/>
+                                <br/>
+                                <div class="col-sm-12">
+                                    <center>
+                                    <button type="submit" class="btn btn-raised waves-effect g-bg-blush2">Guardar</button>
+                                    <a href="{{ route('empresas.index')}}" class="btn btn-raised btn-default waves-effect">Cancelar</a>
+                                    </center>
+                                </div>
+
+                            {!! Form::close() !!}
+                        </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>        
+        
+    </div>
+
+    
+@endsection
