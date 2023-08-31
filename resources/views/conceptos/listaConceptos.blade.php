@@ -33,7 +33,7 @@
                             </div>
                            
                             <div class="body table-responsive">
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                <table class="table-responsive table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead class="bg-danger">
                                         <tr class="bg-info justify-content-center">
                                             <th>Codigo</th>

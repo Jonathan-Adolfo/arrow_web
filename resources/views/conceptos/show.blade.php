@@ -92,14 +92,17 @@
                         <div class="col-sm-12 text-center">
 
                             @if ($concepto->estatus !=1)
-                            <div class="col-sm-12 center  d-flex ">
+                            <div class="body table-responsive col-sm-12 center  d-flex ">
     
-                                <a href="javascript:window.print()" class="btn btn-raised btn-success m-auto"  ><i class="zmdi zmdi-print"></i></a>
+                                <a href="javascript:window.print()" class="btn btn-raised btn-success "  ><i class="zmdi zmdi-print"></i></a>
                                 @can('editar-concepto')
-                                <a href="{{route('conceptosec.edit',$concepto->id)}}"  class=" m-auto btn btn-raised btn-warning">Editar</a>
+                        
+                                <a href="{{route('conceptosec.edit',$concepto->id)}}"  class="btn btn-raised btn-warning">Editar</a>
+
                                 <a href="{{route('conceptosec.imagen',$concepto->id)}}" class="btn btn-raised btn-info">Agregar Imagen </a>
+
                                 @endcan
-                                <a href="{{route('conceptosec.show',$concepto->id_codigo)}}" class="btn btn-raised btn-success m-auto" >Regresar</a>
+                                <a href="{{route('conceptosec.show',$concepto->id_codigo)}}" class="btn btn-raised btn-success " >Regresar</a>
     
                               
                             </div>
@@ -117,10 +120,10 @@
                     <br><br>
                     
                     <div class="container">
-                        <div class="row">
+                        <div class="row row-cols-sm-2">
                         @foreach($imagenes as $imagen )
                         
-                            <div class="col-4">
+                            <div class="col">
                                 <h3 class=""><img src="{{asset('img/usuarios/'.$imagen->imagen)}}" width="140px" height="100px" alt="velonic"></h3>
                                 <p><strong>Descripción: </strong> {{ $imagen->descripcion }}</p>
                                 @can('editar-concepto')

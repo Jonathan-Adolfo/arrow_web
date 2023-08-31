@@ -47,8 +47,8 @@
                     
                     {{-- en el caso de que este amrcado la longitud --}}
                     @if ($l==1)
-                    <a href="{{route('registrar.avance',$avance->id)}}"  class="m-auto btn btn-raised btn-warning m-auto">Hombro Derecho</a>   
-                    <a href="{{route('registrar.avanceI',$avance->id)}}"  class="m-auto btn btn-raised btn-warning m-auto">Hombro Izquierdo</a>  
+                    <a href="{{route('registrar.avance',$avance->id)}}"  class="btn btn-raised btn-warning ">Hombro Derecho</a>   
+                    <a href="{{route('registrar.avanceI',$avance->id)}}"  class="btn btn-raised btn-warning ">Hombro Izquierdo</a>  
                     
                         
                     @else
@@ -70,9 +70,10 @@
                           <input type="date" id="dateFin" name="dateFin">  
                         </div>
                       </div>
-                      <div class="col-md-4 d-flex justify-content-center align-items-end">
+                     <!-- Segundo botón de imprimir avance, no tiene funcionalidad
+                       <div class="col-md-4 d-flex justify-content-center align-items-end">
                       <button class="btn btn-sm btn-raised btn-primary" style="float:right;" type="submit">Imprimir Reporte<i class="material-icons" style=" margin-bottom: 8px;">file_download</i> </button>
-                      </div>
+                      </div>-->
                   </form>
                 </div>
 

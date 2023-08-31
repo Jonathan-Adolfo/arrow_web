@@ -46,7 +46,7 @@
                         <h4 class="text-center">Empleados de Empresa</h4>
                     </div>
                     <div class="body table-responsive">
-                        <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                        <table class="table-responsive table table-bordered table-striped table-hover js-basic-example dataTable">
                             <thead>
                                 <tr>
                                     <th>Nombre</th>
